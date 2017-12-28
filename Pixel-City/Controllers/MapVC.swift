@@ -15,10 +15,18 @@ import AlamofireImage
 class MapVC: UIViewController, UIGestureRecognizerDelegate {
     
     
+    @IBOutlet weak var pullUPView: UIView!
+    @IBOutlet weak var pullUpViewHieghtConstraint: NSLayoutConstraint!
     @IBOutlet weak var mapView: MKMapView!
+   
     var locationManager = CLLocationManager()
     let authorizationStatus = CLLocationManager.authorizationStatus()
     let regionRadius: Double = 1000
+    
+    var screenSize = UIScreen.main.bounds
+    
+    var spinner: UIActivityIndicatorView?
+    var progressLabel: UILabel?
     
 
     override func viewDidLoad() {
@@ -36,6 +44,39 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
         mapView.addGestureRecognizer(doubleTap)
         
     }
+    
+    func addSwipe() {
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(animateViewDown))
+        swipe.direction = .down
+        pullUPView.addGestureRecognizer(swipe)
+    }
+    
+    func animateViewUp() {
+        pullUpViewHieghtConstraint.constant = 300
+        UIView.animate(withDuration: 0.3) {
+        self.view.layoutIfNeeded()
+
+            }
+
+    }
+    
+    @objc func animateViewDown() {
+        pullUpViewHieghtConstraint.constant = 0
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+            
+        }
+        
+    }
+    
+    func addSpinner() {
+        spinner = UIActivityIndicatorView()
+        spinner?.center = CGPoint(x: (screenSize.width / 2) - ((spinner?.frame.width)! / 2), y: 150)
+        spinner?.activityIndicatorViewStyle = .whiteLarge
+        spinner?.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        spinner?.startAnimating()
+        pullUPView.addSubview(spinner!)
+    }
 
 
     @IBAction func centerMapBtnPressed(_ sender: Any) {
@@ -50,7 +91,7 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
 extension MapVC: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
+    
         if annotation is MKUserLocation {
             return nil
         }
@@ -70,6 +111,10 @@ extension MapVC: MKMapViewDelegate {
     
     @objc func dropPin(sender: UITapGestureRecognizer) {
         removePin()
+        animateViewUp()
+        addSwipe()
+        addSpinner()
+        
         let touchPoint = sender.location(in: mapView)
         let touchCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
         
@@ -80,6 +125,7 @@ extension MapVC: MKMapViewDelegate {
         mapView.setRegion(coordinateRegion, animated: true)
         print(touchCoordinate)
         
+       
     }
     
     func removePin() {

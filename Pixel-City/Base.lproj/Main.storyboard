@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qU-Mu-ESv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="666"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gz7-NP-0uM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -47,6 +47,13 @@
                                     <constraint firstAttribute="height" constant="70" id="bRn-kW-4Az"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSR-3E-eYV">
+                                <rect key="frame" x="0.0" y="666" width="375" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Xk4-Ny-Y3T"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itd-kd-7dQ">
                                 <rect key="frame" x="317" y="597" width="50" height="50"/>
                                 <constraints>
@@ -58,32 +65,28 @@
                                     <action selector="centerMapBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hnS-s3-u7p"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSR-3E-eYV">
-                                <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vSR-3E-eYV" firstAttribute="top" secondItem="1qU-Mu-ESv" secondAttribute="bottom" id="1U6-bc-WQj"/>
                             <constraint firstItem="1qU-Mu-ESv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5y3-lG-hzS"/>
                             <constraint firstItem="gz7-NP-0uM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BME-ap-QKa"/>
-                            <constraint firstItem="1qU-Mu-ESv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Btr-87-KyT"/>
+                            <constraint firstItem="vSR-3E-eYV" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="GAz-DR-JeY"/>
                             <constraint firstItem="gz7-NP-0uM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="INB-VD-OzT"/>
                             <constraint firstAttribute="trailing" secondItem="vSR-3E-eYV" secondAttribute="trailing" id="KNk-zz-FcP"/>
-                            <constraint firstItem="1qU-Mu-ESv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KWa-Mg-b3f"/>
-                            <constraint firstItem="1qU-Mu-ESv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PHh-6s-MrB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="itd-kd-7dQ" secondAttribute="bottom" constant="20" id="dKh-S6-xHL"/>
+                            <constraint firstItem="1qU-Mu-ESv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="KWa-Mg-b3f"/>
+                            <constraint firstItem="vSR-3E-eYV" firstAttribute="top" secondItem="itd-kd-7dQ" secondAttribute="bottom" constant="19" id="MPo-hQ-dS4"/>
+                            <constraint firstItem="1qU-Mu-ESv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PHh-6s-MrB"/>
                             <constraint firstItem="vSR-3E-eYV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="et4-te-BcH"/>
-                            <constraint firstItem="vSR-3E-eYV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jmE-lH-WPm"/>
                             <constraint firstItem="gz7-NP-0uM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="js5-gY-WCL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="itd-kd-7dQ" secondAttribute="trailing" constant="8" id="lZs-uR-yGp"/>
-                            <constraint firstItem="1qU-Mu-ESv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vcL-kZ-jgY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="1qU-Mu-ESv" id="qPG-eX-OmK"/>
+                        <outlet property="pullUPView" destination="vSR-3E-eYV" id="NHl-0e-3GP"/>
+                        <outlet property="pullUpViewHieghtConstraint" destination="Xk4-Ny-Y3T" id="t1y-rM-DdU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
