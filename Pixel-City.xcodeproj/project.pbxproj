@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5047EBD934BE5D0973BF462C /* Pods_Pixel_City.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58568B8CEDABB0184EA007A /* Pods_Pixel_City.framework */; };
+		DB48A66C201027FB0090F361 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48A66B201027FB0090F361 /* Constants.swift */; };
 		DB549B941FF2EC7800FB621C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB549B931FF2EC7800FB621C /* AppDelegate.swift */; };
 		DB549B961FF2EC7800FB621C /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB549B951FF2EC7800FB621C /* MapVC.swift */; };
 		DB549B991FF2EC7800FB621C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB549B971FF2EC7800FB621C /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		42B2749041D99EF2D6AF7F3D /* Pods-Pixel-City.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pixel-City.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pixel-City/Pods-Pixel-City.release.xcconfig"; sourceTree = "<group>"; };
 		D41FD9C926142259E867C4E6 /* Pods-Pixel-City.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pixel-City.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pixel-City/Pods-Pixel-City.debug.xcconfig"; sourceTree = "<group>"; };
+		DB48A66B201027FB0090F361 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DB549B901FF2EC7800FB621C /* Pixel-City.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pixel-City.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB549B931FF2EC7800FB621C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB549B951FF2EC7800FB621C /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		DB549BA81FF2ECCE00FB621C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				DB48A66B201027FB0090F361 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB48A66C201027FB0090F361 /* Constants.swift in Sources */,
 				DB549BAC1FF6B4BC00FB621C /* PhotoCell.swift in Sources */,
 				DB549B961FF2EC7800FB621C /* MapVC.swift in Sources */,
 				DB549BAA1FF4610500FB621C /* droppablePin.swift in Sources */,
